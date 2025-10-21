@@ -7,7 +7,7 @@ venv\Scripts\Activate
 
 ## 2. Navigate to Scripts Folder
 ```In terminal:
-cd frontend\Vishal-M\scripts
+cd frontend\Darshita-G\scripts
 ```
 
 ## 3. Run Scripts
