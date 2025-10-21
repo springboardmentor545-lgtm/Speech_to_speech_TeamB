@@ -1,15 +1,20 @@
 import os
 import csv
 import azure.cognitiveservices.speech as speechsdk
+from dotenv import load_dotenv
 
-# Replace with your actual Azure credentials
-SPEECH_KEY = "YOUR_SPEECH_KEY"
-SERVICE_REGION = "YOUR_REGION"
+# Load environment variables from .env file
+load_dotenv()
+
+# Get Azure credentials from environment variables
+SPEECH_KEY = os.getenv("SPEECH_KEY")
+SERVICE_REGION = os.getenv("SERVICE_REGION")
 
 
-# Paths
-INPUT_DIR = "speech_samples"
-OUTPUT_CSV = "transcripts/transcripts.csv"
+# Paths (relative to script location)
+INPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "speech_samples")
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "transcripts")
+OUTPUT_CSV = os.path.join(OUTPUT_DIR, "transcripts.csv")
 
 speech_config = speechsdk.SpeechConfig(subscription=SPEECH_KEY, region=SERVICE_REGION)
 
@@ -31,7 +36,7 @@ def transcribe_file(file_path, language="en-US"):
         return "[Unknown error]"
 
 # Create transcripts directory if it doesn't exist
-os.makedirs(os.path.dirname(OUTPUT_CSV), exist_ok=True)
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 print("Starting batch transcription...\n")
 
