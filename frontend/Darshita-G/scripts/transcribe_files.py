@@ -19,21 +19,35 @@ OUTPUT_CSV = os.path.join(OUTPUT_DIR, "transcripts.csv")
 speech_config = speechsdk.SpeechConfig(subscription=SPEECH_KEY, region=SERVICE_REGION)
 
 def transcribe_file(file_path, language="en-US"):
-    """Transcribe a single audio file"""
+    """Transcribe a single audio file using continuous recognition."""
+    import threading
+
     speech_config.speech_recognition_language = language
-    audio_input = speechsdk.AudioConfig(filename=file_path)
-    recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_input)
-    
-    result = recognizer.recognize_once_async().get()
-    
-    if result.reason == speechsdk.ResultReason.RecognizedSpeech:
-        return result.text
-    elif result.reason == speechsdk.ResultReason.NoMatch:
-        return "[No speech recognized]"
-    elif result.reason == speechsdk.ResultReason.Canceled:
-        return f"[Error: {result.cancellation_details.reason}]"
-    else:
-        return "[Unknown error]"
+    audio_config = speechsdk.AudioConfig(filename=file_path)
+    recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
+
+    all_results = []
+    done = threading.Event()
+
+    def handle_final_result(evt):
+        all_results.append(evt.result.text)
+
+    def stop_cb(evt):
+        """callback that signals to stop continuous recognition upon session stopped event"""
+        recognizer.stop_continuous_recognition()
+        done.set()
+
+    # Connect callbacks to the events
+    recognizer.recognized.connect(handle_final_result)
+    recognizer.session_stopped.connect(stop_cb)
+    recognizer.canceled.connect(stop_cb)
+
+    # Start continuous recognition
+    recognizer.start_continuous_recognition()
+    done.wait()  # Wait until recognition is complete
+
+    full_text = " ".join(all_results).strip()
+    return full_text if full_text else "[No speech recognized]"
 
 # Create transcripts directory if it doesn't exist
 os.makedirs(OUTPUT_DIR, exist_ok=True)
