@@ -1,0 +1,242 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: speech-transcription
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: speech-transcription
+data:
+  ENVIRONMENT: "production"
+  LOG_LEVEL: "INFO"
+  DATABASE_URL: "postgresql://user:pass@postgres-service:5432/transcription_db" # Replace user/pass or use secrets
+  # Add other non-sensitive config like TEMP_STORAGE_PATH, ALLOWED_AUDIO_FORMATS etc. if needed
+  CORS_ORIGINS: "https://transcription.yourdomain.com" # Adjust domain
+  ALLOWED_HOSTS: "transcription.yourdomain.com" # Adjust domain
+  ENABLE_METRICS: "true"
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backend-secrets
+  namespace: speech-transcription
+type: Opaque
+# In a real production environment, this Secret should be created securely
+# out-of-band, for example using a secret management tool like Azure Key Vault,
+# HashiCorp Vault, or Sealed Secrets. Do not commit real secrets here.
+# Example kubectl command to create it:
+# kubectl create secret generic backend-secrets -n speech-transcription \
+#   --from-literal=SPEECH_KEY='your-key' \
+#   --from-literal=SERVICE_REGION='your-region'
+
+---
+# Optional: PersistentVolumeClaim for temp storage if needed across restarts/pods
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: backend-temp-storage
+#   namespace: speech-transcription
+# spec:
+#   accessModes:
+#     - ReadWriteOnce # Or ReadWriteMany depending on storage class and needs
+#   resources:
+#     requests:
+#       storage: 10Gi # Adjust size as needed
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: speech-transcription
+  labels:
+    app: speech-transcription
+    component: backend
+spec:
+  replicas: 3 # Start with 3 replicas, adjust based on load
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1       # Allow 1 extra pod during updates
+      maxUnavailable: 0 # Ensure no downtime during updates
+  selector:
+    matchLabels:
+      app: speech-transcription
+      component: backend
+  template:
+    metadata:
+      labels:
+        app: speech-transcription
+        component: backend
+    spec:
+      containers:
+      - name: backend
+        image: your-registry/speech-transcription-backend:latest # Replace with your image registry/name
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        envFrom:
+        - configMapRef:
+            name: backend-config
+        - secretRef:
+            name: backend-secrets
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m" # 0.5 vCPU
+          limits:
+            memory: "2Gi" # Allow up to 2GB RAM
+            cpu: "2000m" # Allow up to 2 vCPUs
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 45 # Increased delay to allow startup
+          periodSeconds: 15
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 15 # Shorter delay for readiness
+          periodSeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 3
+        volumeMounts:
+        - name: temp-storage
+          mountPath: /app/temp_audio
+      volumes:
+      - name: temp-storage
+        emptyDir: {} # Use emptyDir for ephemeral storage per pod
+        # Or use the PVC defined above:
+        # persistentVolumeClaim:
+        #   claimName: backend-temp-storage
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: speech-transcription
+spec:
+  selector:
+    app: speech-transcription
+    component: backend
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  type: ClusterIP # Internal service
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: speech-transcription
+  labels:
+    app: speech-transcription
+    component: frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: speech-transcription
+      component: frontend
+  template:
+    metadata:
+      labels:
+        app: speech-transcription
+        component: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: your-registry/speech-transcription-frontend:latest # Replace with your image registry/name
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          name: http
+        resources: # Frontend is typically less resource-intensive
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        readinessProbe: # Simple check if Nginx is serving
+          httpGet:
+            path: / # Check root path
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: speech-transcription
+spec:
+  selector:
+    app: speech-transcription
+    component: frontend
+  ports:
+  - port: 80 # Expose port 80 externally
+    targetPort: 80
+    protocol: TCP
+  type: LoadBalancer # Or NodePort/Ingress depending on your setup
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: speech-transcription-ingress
+  namespace: speech-transcription
+  annotations:
+    kubernetes.io/ingress.class: "nginx" # Or your ingress controller class
+    # cert-manager.io/cluster-issuer: "letsencrypt-prod" # If using cert-manager for TLS
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m" # Allow large uploads via ingress
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
+    # For WebSockets through Nginx Ingress
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600" # Long timeout for WS
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    nginx.ingress.kubernetes.io/affinity: "cookie" # Optional: Session affinity for WS if needed
+spec:
+  # tls: # Uncomment and configure if using TLS
+  # - hosts:
+  #   - transcription.yourdomain.com
+  #   secretName: speech-transcription-tls # Secret created by cert-manager or manually
+  rules:
+  - host: transcription.yourdomain.com # Replace with your domain
+    http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: backend-service
+            port:
+              number: 8000
+      - path: /ws
+        pathType: Prefix
+        backend:
+          service:
+            name: backend-service
+            port:
+              number: 8000
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend-service
+            port:
+              number: 80

@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-migration-${{ github.run_id }} # Unique name per run
+  namespace: speech-transcription
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade # Run before installing/upgrading chart
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: migration
+        image: your-registry/speech-transcription-backend:latest # Use the same backend image
+        command: ["alembic", "upgrade", "head"]
+        envFrom:
+        - configMapRef:
+            name: backend-config
+        - secretRef:
+            name: backend-secrets
+      restartPolicy: Never # Jobs should run once
+  backoffLimit: 3 # Retry up to 3 times on failure
+  activeDeadlineSeconds: 300 # Fail job if it runs longer than 5 minutes

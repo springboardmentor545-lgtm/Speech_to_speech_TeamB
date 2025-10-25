@@ -1,0 +1,35 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: backend-hpa
+  namespace: speech-transcription
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: backend
+  minReplicas: 3 # Minimum number of pods
+  maxReplicas: 10 # Maximum number of pods
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        # Target 70% average CPU utilization across all pods
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        # Target 80% average Memory utilization across all pods
+        averageUtilization: 80
+  # Optional: Add custom metrics if needed (e.g., requests per second)
+  # - type: Pods
+  #   pods:
+  #     metric:
+  #       name: requests_per_second
+  #     target:
+  #       type: AverageValue
+  #       averageValue: 100 # Target 100 RPS per pod

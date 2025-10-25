@@ -1,0 +1,180 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main, staging] # Trigger on pushes to main and staging
+  pull_request:
+    branches: [main] # Trigger on PRs targeting main
+
+env:
+  REGISTRY: ghcr.io # GitHub Container Registry
+  # IMAGE_NAME: ${{ github.repository }} # Example: your-org/your-repo
+  BACKEND_IMAGE_NAME: ${{ github.repository_owner }}/speech-transcription-backend # Specific name
+  FRONTEND_IMAGE_NAME: ${{ github.repository_owner }}/speech-transcription-frontend # Specific name
+
+jobs:
+  test:
+    name: Run Backend Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install backend dependencies
+        working-directory: ./backend
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov pytest-asyncio httpx # Install test dependencies
+
+      - name: Run backend tests with coverage
+        working-directory: ./backend
+        run: pytest tests/ -v --cov=app --cov-report=xml
+
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # Add Codecov token to GitHub secrets
+          files: ./backend/coverage.xml
+          working-directory: ./backend # Specify working directory for finding report
+          fail_ci_if_error: true
+
+  # Build Backend Image (only on push events)
+  build-backend:
+    name: Build Backend Image
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' # Only build on push, not PR
+    permissions:
+      contents: read
+      packages: write # Required to push to GitHub Container Registry
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.BACKEND_IMAGE_NAME }}
+          tags: |
+            type=sha # Tag with commit SHA
+            type=ref,event=branch # Tag with branch name (e.g., main, staging)
+            type=ref,event=pr # Tag with PR number (if applicable, though build is on push)
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }} # Tag main branch pushes as latest
+
+      - name: Build and push backend image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha # Enable GitHub Actions cache for builds
+          cache-to: type=gha,mode=max
+
+  # Build Frontend Image (only on push events)
+  build-frontend:
+    name: Build Frontend Image
+    # needs: test # Frontend tests could run here if added
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' # Only build on push
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Build frontend application
+        working-directory: ./frontend
+        # Pass build-time args if needed: run: npm run build -- --env API_URL=...
+        run: npm run build
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.FRONTEND_IMAGE_NAME }}
+          tags: |
+            type=sha
+            type=ref,event=branch
+            type=ref,event=pr
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./frontend
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # Deploy (only on push to main branch)
+  deploy:
+    name: Deploy to Kubernetes
+    needs: [build-backend, build-frontend]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' # Only deploy pushes to main
+    environment: production # Link to GitHub Environment for secrets/protection rules
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Example: Deploying to Azure Kubernetes Service (AKS)
+      - name: Set Kubernetes context (Azure AKS example)
+        uses: azure/k8s-set-context@v3
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBE_CONFIG }} # Store Kubeconfig in GitHub secrets
+
+      # Example: Using Helm for deployment (Recommended)
+      # - name: Setup Helm
+      #   uses: azure/setup-helm@v3
+      #
+      # - name: Deploy with Helm
+      #   run: |
+      #     helm upgrade --install speech-transcription ./deployment/helm       #       --namespace speech-transcription --create-namespace       #       --set backend.image.tag=${{ github.sha }}       #       --set frontend.image.tag=${{ github.sha }}       #       --wait
+
+      # Alternative: Using kubectl set image (Simpler, less robust)
+      - name: Update Kubernetes deployments
+        run: |
+          kubectl set image deployment/backend backend=${{ env.REGISTRY }}/${{ env.BACKEND_IMAGE_NAME }}:${{ github.sha }} -n speech-transcription
+          kubectl set image deployment/frontend frontend=${{ env.REGISTRY }}/${{ env.FRONTEND_IMAGE_NAME }}:${{ github.sha }} -n speech-transcription
+
+      - name: Verify deployment rollout
+        run: |
+          kubectl rollout status deployment/backend -n speech-transcription --timeout=5m
+          kubectl rollout status deployment/frontend -n speech-transcription --timeout=2m
