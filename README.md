@@ -7,14 +7,10 @@
 
 ## 🎬 Demo Video
 
-> **🚀 Live Demonstration Coming Soon!**
-> 
-> Watch our AI-powered speech translation system in action:
-> - Real-time English and Hindi speech recognition
-> - Batch audio file processing capabilities
-> - Multi-language transcription accuracy showcase
-> 
-> *Demo video will be available upon project completion*
+
+https://github.com/user-attachments/assets/6a0b7c4c-279b-4a88-8f51-9365b95324e1
+
+
 
 ---
 
