@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/62952b78-c30a-4920-9689-5898d9c3f732
 # AI-Powered Real-Time Speech Translation for Multilingual Content
 
 [![Project Status](https://img.shields.io/badge/Status-In%20Development-blue.svg)](https://github.com/your-repo)
@@ -7,11 +9,10 @@
 
 ## 🎬 Demo Video
 
-
+## Batch Processing 
 https://github.com/user-attachments/assets/d467fd84-8f7c-4263-bf17-26b1a4811bcb
-
-
-
+## Demo
+https://github.com/user-attachments/assets/7e41c06f-70b8-4ec7-adbc-981dea23c550
 ---
 
 ## 🎯 Project Overview
