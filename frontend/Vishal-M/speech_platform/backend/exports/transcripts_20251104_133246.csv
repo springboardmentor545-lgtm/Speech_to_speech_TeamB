@@ -1,0 +1,13 @@
+id,filename,status,text,language
+1,25c3e229-e595-48d4-b245-3b31d5467cea_hi_commentary_03.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+2,654f15a8-b35a-46be-b9b5-007ce2617515_recording-1762240461659.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+3,945cc3fa-f207-442a-a01a-a4a51400b2c7_recording-1762240474428.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+4,26a74b39-121e-419e-b6f6-d2c41811aab4_hi_commentary_03.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+5,a88efa2e-ffd4-4d2d-8436-81814460611c_hi_commentary_02.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+6,4178b5f7-eca9-450b-8eac-717ee0c88156_recording-1762241042067.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+7,6411c1a3-076e-460e-bb2a-76bd32471cf0_hi_commentary_02.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+8,3c4cbce6-d054-472f-b949-2aa89b87d7b9_recording-1762242919821.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+9,699d9714-b0dd-45c9-a665-7e21afca89db_hi_commentary_04.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+10,9d71b264-7124-4418-9ac6-34a12886a888_hi_commentary_03.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+11,ce0aaff4-2707-4fd0-8413-cb82b489f552_hi_commentary_03.wav,failed,Error: cannot construct SpeechConfig with the given arguments,en-US
+12,d04a8df8-7ca5-4dfb-8c01-6a588e651ebb_hi_commentary_05.wav,completed,Jungle me kuch chote or kuch mote janwar nazrate hai.,en-US
