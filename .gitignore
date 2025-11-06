@@ -1,12 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.db
+
 # Python virtual environment
 /.venv
 
 # Node.js dependencies
-/node_modules
+node_modules/
 
-/.env
+# Environment variables
+.env
 *.env
 
 # Logs
-/logs
+logs/
 *.log
+
+# Uploads and Exports
+speech_platform/backend/uploads/
+speech_platform/backend/exports/
+frontend/Vishal-M/transcripts/
