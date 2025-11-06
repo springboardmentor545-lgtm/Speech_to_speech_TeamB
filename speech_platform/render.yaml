@@ -1,0 +1,62 @@
+services:
+  - type: web
+    name: speech-platform-backend
+    env: python
+    region: oregon # e.g., oregon
+    plan: free # or standard
+    rootDir: speech_platform/backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheck:
+      path: /health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: speech-platform-db
+          property: connectionString
+      - key: AZURE_SPEECH_KEY
+        sync: false # Secret
+      - key: AZURE_SPEECH_REGION
+        value: eastus
+      - key: AZURE_TTS_KEY
+        sync: false # Secret
+      - key: AZURE_TTS_REGION
+        value: eastus
+      - key: AZURE_OPENAI_API_KEY
+        sync: false # Secret
+      - key: AZURE_OPENAI_ENDPOINT
+        sync: false # Secret (e.g., https://your-instance.openai.azure.com/)
+      - key: AZURE_OPENAI_DEPLOYMENT_NAME
+        sync: false # Secret (model deployment name)
+      - key: OPENAI_API_VERSION
+        value: 2023-07-01-preview
+      - key: PYTHON_VERSION
+        value: 3.11
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1
+
+  - type: web
+    name: speech-platform-frontend
+    env: static
+    region: oregon
+    plan: free
+    rootDir: speech_platform/frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - key: /api/*
+        destination: https://your-backend-service-name.onrender.com/api/*
+        rewrite: true
+      - key: /ws/*
+        destination: wss://your-backend-service-name.onrender.com/ws/*
+        rewrite: true
+      - key: /*
+        destination: /index.html
+        rewrite: true
+
+databases:
+  - name: speech-platform-db
+    region: oregon
+    plan: free

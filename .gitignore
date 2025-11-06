@@ -4,7 +4,7 @@ __pycache__/
 *.db
 
 # Python virtual environment
-/.venv
+.venv/
 
 # Node.js dependencies
 node_modules/
