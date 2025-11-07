@@ -3,7 +3,7 @@
 ## Quick Start
 1. Create and activate a Python 3.10+ venv
 2. `pip install -r requirements.txt`
-3. Copy `.env.example` to `.env` and fill Azure keys
+3. Copy .env and fill Azure keys
 4. Run the GUI: `streamlit run app.py`
 
 ## What it does
