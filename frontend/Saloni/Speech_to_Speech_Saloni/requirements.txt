@@ -1,0 +1,5 @@
+streamlit
+azure-cognitiveservices-speech==1.35.0
+python-dotenv==1.0.0
+requests
+pydub
