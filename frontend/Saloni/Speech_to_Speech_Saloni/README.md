@@ -15,7 +15,7 @@
 ## Structure
 ```
 .
-├── .env.example
+├── .env
 ├── requirements.txt
 ├── app.py
 └── frontend/Saloni-S/
