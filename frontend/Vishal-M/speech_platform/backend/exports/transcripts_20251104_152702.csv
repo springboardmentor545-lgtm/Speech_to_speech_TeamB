@@ -1,0 +1,25 @@
+id,filename,status,text,language
+1,25c3e229-e595-48d4-b245-3b31d5467cea_hi_commentary_03.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+2,654f15a8-b35a-46be-b9b5-007ce2617515_recording-1762240461659.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+3,945cc3fa-f207-442a-a01a-a4a51400b2c7_recording-1762240474428.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+4,26a74b39-121e-419e-b6f6-d2c41811aab4_hi_commentary_03.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+5,a88efa2e-ffd4-4d2d-8436-81814460611c_hi_commentary_02.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+6,4178b5f7-eca9-450b-8eac-717ee0c88156_recording-1762241042067.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+7,6411c1a3-076e-460e-bb2a-76bd32471cf0_hi_commentary_02.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+8,3c4cbce6-d054-472f-b949-2aa89b87d7b9_recording-1762242919821.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+9,699d9714-b0dd-45c9-a665-7e21afca89db_hi_commentary_04.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+10,9d71b264-7124-4418-9ac6-34a12886a888_hi_commentary_03.wav,failed,Error: either subscription key or authorization token must be given along with a region,en-US
+11,ce0aaff4-2707-4fd0-8413-cb82b489f552_hi_commentary_03.wav,failed,Error: cannot construct SpeechConfig with the given arguments,en-US
+12,d04a8df8-7ca5-4dfb-8c01-6a588e651ebb_hi_commentary_05.wav,completed,Jungle me kuch chote or kuch mote janwar nazrate hai.,en-US
+13,c5161282-ca18-439c-8786-78fa6a7ce9c7_hi_commentary_04.wav,completed,Is tapti dhoop Mein tum kharse bahar mat miklo?,en-US
+14,44f0b587-070d-48a2-af38-411efdf0f644_recording-1762243432333.wav,completed,"Hello, hello, hello.",en-US
+15,3e4a4ea4-5804-4ecc-8373-7c862192b367_recording-1762243446165.wav,completed,"Hi, how are you? My name is Vishal.",en-US
+16,eea47573-bb18-43b3-8b58-5db59511dc37_recording-1762243459755.wav,completed,Tumhara nyam kya hai.,en-US
+17,0604c49c-f8ba-495b-9e6e-7488e80ef997_recording-1762243570826.wav,completed,Fama Urbu.,en-US
+18,1cee3b40-0872-4d8f-82c4-4e43241474aa_hi_commentary_03.wav,completed,"Shalini Kapas saurabhi. Sita or Sunil kalarka pahot ho shar hai. Tumhari kavita litany kasha kapseuruhua. Sote Hua share kojagana uchit nahi hai. Shore mat karo nahinto suhasini jagjey. Kam shuru hone sepele hemat mat haro. Hemant Shailesh or Shekhaka Hilhar Kahe. OK, chef Kavya Vihar.",en-US
+19,80442c2b-a8a4-494d-8054-28bd63b93a3a_en_commentary_02.wav,completed,The boy was there when the sun rose. A rod is used to catch pink salmon. The source of the huge river is the clear spring. Kick the ball straight and follow through. Help the woman back to her feet. A pot of tea helps to pass the evening. Smoky fires lack flame and heat. The soft cushion broke the man's father.,en-US
+20,186c40d2-1bdf-4457-8e22-271459558803_en_commentary_03.wav,completed,The small pup gnawed a hole in the sock. The fish twisted and turned on the bent hook. Press the pants and sew a button on the vest. The swan dive was far short of perfect. The beauty of the view stunned the young boy. 2 blue fish swam in the tank. Her purse was full of useless trash. The colt reared and threw the toll.,en-US
+21,008c539d-ef56-4eca-883c-0440e1df0a4d_recording-1762249920053.wav,completed,Tomorrow nyam kya hai.,en-US
+22,790a746d-12e4-4b22-a4ad-b776b810dd3b_recording-1762249930068.wav,completed,Tumhara nyam kya hai.,en-US
+23,dd602dc4-e0aa-467a-ae01-f2a1eee75ddb_recording-1762249939942.wav,completed,Hi everyone.,en-US
+24,bc33a544-43f3-44da-8d1a-3d5c4a93e8d4_en_commentary_04.wav,processing,,en-US
