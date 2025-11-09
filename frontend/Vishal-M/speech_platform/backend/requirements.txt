@@ -1,0 +1,50 @@
+# --- Core Web Framework ---
+fastapi==0.110.2            # latest stable with Pydantic v2 support
+uvicorn[standard]==0.30.1   # includes watchfiles + logging
+
+# --- ORM / Database ---
+sqlalchemy==2.0.31          # stable, async support built-in
+pydantic==2.7.4             # required by FastAPI 0.110+
+pydantic-settings==2.3.4
+alembic==1.13.2             # migration tool
+psycopg2-binary==2.9.9      # PostgreSQL driver
+aiosqlite==0.20.0           # for async SQLite (dev mode)
+
+# --- Async stack / HTTP ---
+
+httpx==0.28.1               # required by Azure Translator (replaces aiohttp)
+websockets==12.0            # for Milestone 3 real-time communication
+
+# --- Speech / Translation / AI ---
+azure-cognitiveservices-speech==1.37.0  # Azure STT/TTS
+azure-identity==1.16.0                  # Azure auth for other services
+openai==1.12.0                         # unified OpenAI client (used in fallback translation)
+# Translator Text API uses direct REST (httpx), so no SDK required
+
+nltk>=3.8
+textstat>=0.7
+# optional but recommended:
+sacrebleu>=2.3.1
+
+# --- Background / Rate Limiting ---
+celery==5.4.0              # task queue for background audio/translation jobs
+redis==5.0.4               # Celery broker backend
+slowapi==0.1.8             # rate limiting middleware for FastAPI
+
+# --- Audio / File Processing ---
+ffmpeg-python==0.2.0
+pydub==0.25.1
+python-multipart==0.0.9    # required for file uploads
+
+# --- Logging / Env / Utils ---
+structlog==24.1.0
+python-dotenv==1.0.1
+loguru==0.7.2              # optional better logging (recommended)
+
+# --- Data / Analysis ---
+pandas==2.2.2
+numpy==1.26.4
+
+# --- Optional / Dev ---
+black==24.4.2
+isort==5.13.2
