@@ -164,6 +164,7 @@ Speech_to_speech_TeamB/
 - **Naming Convention**: 
   - English files: `en_filename.wav`
   - Hindi files: `hi_filename.wav`
+  - similarly refer the below table for the file name convention for the remaining languages.
 - **Quality**: Clear speech, minimal background noise for optimal results
 
 ## 🌐 Language Support
