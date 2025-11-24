@@ -19,15 +19,22 @@ https://github.com/user-attachments/assets/4e88b039-2869-4179-9745-744eae902b20
 
 ## 🎯 Project Overview
 
-This project develops a comprehensive speech-to-speech translation system that converts live commentary or spoken content from English/Hindi into multiple languages. The solution utilizes Azure Cognitive Services Speech-to-Text technology to achieve accurate real-time transcription and prepares for seamless integration into existing media platforms.
+This project delivers a complete speech-to-speech translation system capable of converting audio/video content or live speech into multiple languages in real time. Built using Azure Cognitive Services, the system performs:
+
+-Real-time speech recognition
+-Instant translation
+-AI voice-based speech synthesis
+-Automatic video/audio dubbing
+-Latency and accuracy monitoring
+-The platform is designed with a production mindset—capable of supporting OTT platforms, live commentary, and multilingual media workflows.
 
 ### 🎯 **Mission Statement**
 Revolutionizing multilingual content accessibility by providing real-time speech translation capabilities for OTT platforms, enhancing viewer experience across diverse linguistic audiences.
 
 ### 📊 **Project Scope**
 - **Phase 1**: Speech Recognition & Data Collection ✅
-- **Phase 2**: Translation Model Development (In Progress)
-- **Phase 3**: Real-time Speech-to-Speech Integration (Planned)
+- **Phase 2**: Translation Model Development ✅
+- **Phase 3**: Real-time Speech-to-Speech Integration ✅
 - **Phase 4**: OTT Platform Deployment (Planned)
 
 ### 🏆 **Technical Excellence**
@@ -161,10 +168,22 @@ Speech_to_speech_TeamB/
 
 ## 🌐 Language Support
 
-| Language | Code | Status | Sample Files |
-|----------|------|--------|--------------|
-| English | en-US | ✅ Fully Supported | en_commentary_01-05.wav |
-| Hindi | hi-IN | ✅ Fully Supported | hi_commentary_01-05.wav |
+| Language | Recognition Code | Translation Code | Neural Voice (Azure TTS) |
+|----------|------------------|------------------|---------------------------|
+| English  | en-US            | en               | JennyNeural |
+| Hindi    | hi-IN            | hi               | SwaraNeural |
+| French   | fr-FR            | fr               | DeniseNeural |
+| Spanish  | es-ES            | es               | ElviraNeural |
+| German   | de-DE            | de               | KatjaNeural |
+| Tamil    | ta-IN            | ta               | PallaviNeural |
+| Telugu   | te-IN            | te               | ShrutiNeural |
+| Malayalam| ml-IN            | ml               | SobhanaNeural |
+| Arabic   | ar-AE / ar-EG    | ar               | SalmaNeural |
+| Chinese  | zh-CN            | zh-cn            | XiaoxiaoNeural |
+| Russian  | ru-RU            | ru               | SvetlanaNeural |
+| Japanese | ja-JP            | ja               | NanamiNeural |
+| Korean   | ko-KR            | ko               | SunHiNeural |
+
 
 ## 📊 Performance Metrics & Results
 
