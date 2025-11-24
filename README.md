@@ -1,4 +1,4 @@
-# AI-Powered Real-Time Speech Translation for Multilingual Content
+# AI-Powered Real-Time Speech to Speech Translation for Multilingual Content
 
 [![Project Status](https://img.shields.io/badge/Status-In%20Development-blue.svg)](https://github.com/your-repo)
 [![Python Version](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
