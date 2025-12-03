@@ -51,7 +51,7 @@ Transform speech from one language to another **in real-time** without compromis
 
 ## 🎥 Demo Video
 
-Video link: https://www.youtube.com/watch?v=j9u-gp7EpEA&t=19s
+https://github.com/user-attachments/assets/13535ca0-0c07-4505-b8ac-f579900c5f2d
 
 ---
 
@@ -460,58 +460,14 @@ pytest scripts/backend/ --cov=scripts.backend --cov-report=html
 ## 📸 Screenshots
 
 ### Dashboard Overview
-```
-┌─────────────────────────────────────────────────────────┐
-│  Ultra Audio Studio                        🎤 Live                 │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│  Tabs: [Live Stream] [Record & Dub] [Batch Studio]    │
-│        [Remote Mtg] [Analytics] [History]              │
-│                                                         │
-│  ┌──────────────────────────────────────────────────┐ │
-│  │ Live Stream Translation                          │ │
-│  │ Source Language: [English ▼]                     │ │
-│  │ Target Language: [Spanish ▼]                     │ │
-│  │                                                  │ │
-│  │ Voice Settings:                                  │ │
-│  │ Emotion: [Neutral ▼]  Speed: ●─────  Pitch: ●──│ │
-│  │                                                  │ │
-│  │ [▶ Start] [⏹ Stop] [📊 Metrics]                 │ │
-│  │                                                  │ │
-│  │ Live Transcription:                             │ │
-│  │ EN: "Hello, how are you today?"                │ │
-│  │ ES: "Hola, ¿cómo estás hoy?"                  │ │
-│  └──────────────────────────────────────────────────┘ │
-│                                                         │
-│  Performance Metrics:                                   │
-│  ⏱️ Latency: 245ms  📈 Throughput: 12.5 KB/s          │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
-```
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/815ad5b4-ef42-46e3-b9cf-f07577eaa9a2" />
 
 ### Record & Dub Interface
-```
-┌─────────────────────────────────────────────────────────┐
-│ Record & Dub                              🎙️ New Session │
-├─────────────────────────────────────────────────────────┤
-│                                                         │
-│ [🎤 Record] or [📁 Upload File]                        │
-│                                                         │
-│ Target Language: [Spanish ▼]                           │
-│                                                         │
-│ Voice Customization:                                    │
-│ ├─ Emotion: [Happy ▼]                                  │
-│ ├─ Speed: 1.0x [───●─────]                            │
-│ └─ Pitch: Normal [───●─────]                          │
-│                                                         │
-│ [Generate Dub] [Preview] [Download]                    │
-│                                                         │
-│ Output:                                                 │
-│ ✅ Processing complete (3.2 sec)                       │
-│ 📥 Download: dubbed_audio_es.wav                      │
-│                                                         │
-└─────────────────────────────────────────────────────────┘
-```
+<img width="1919" height="1075" alt="image" src="https://github.com/user-attachments/assets/7a643a4d-6f89-4c07-8a67-050279ac3dd6" />
+
+### Live Stream
+<img width="1919" height="1077" alt="image" src="https://github.com/user-attachments/assets/4ad2abe3-d7be-4ed4-aa31-9358a8e60a26" />
+
 
 ### Analytics Dashboard
 ```
@@ -584,7 +540,7 @@ If you find this project helpful, please consider giving it a ⭐ on [GitHub](ht
 
 <div align="center">
 
-**Made with ❤️ by [Vidzai Digital](https://vidzai.com)**
+**Made with ❤️ by Infosys Springboard Team**
 
 *Breaking Language Barriers Through AI* 🌍🎤
 
