@@ -458,6 +458,9 @@ pytest scripts/backend/ --cov=scripts.backend --cov-report=html
 
 ---
 ## 📸 Screenshots
+### Video Dub
+![WhatsApp Image 2025-12-03 at 23 10 30_cf6cfe06](https://github.com/user-attachments/assets/2f7e1c75-2817-4b28-b9f7-af7e6b78f37a)
+
 
 ### Dashboard Overview
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/815ad5b4-ef42-46e3-b9cf-f07577eaa9a2" />
@@ -468,8 +471,15 @@ pytest scripts/backend/ --cov=scripts.backend --cov-report=html
 ### Live Stream
 <img width="1919" height="1077" alt="image" src="https://github.com/user-attachments/assets/4ad2abe3-d7be-4ed4-aa31-9358a8e60a26" />
 
+### History
+![WhatsApp Image 2025-12-03 at 23 10 06_c91b059e](https://github.com/user-attachments/assets/1a5611ea-c11b-4de0-a07b-36af65d2ffd6)
+![WhatsApp Image 2025-12-03 at 23 10 03_4b0ac240](https://github.com/user-attachments/assets/47d41bd1-b655-4b86-be20-93ace95ad120)
 
 ### Analytics Dashboard
+![WhatsApp Image 2025-12-03 at 23 12 29_c81875fa](https://github.com/user-attachments/assets/4d21c2f3-8a5e-4032-bfbb-ee16c715af13)
+![WhatsApp Image 2025-12-03 at 23 12 45_044868fd](https://github.com/user-attachments/assets/238e5660-b1e3-48c9-9a3a-761ff411cb16)
+
+
 ```
 ┌─────────────────────────────────────────────────────────┐
 │ Analytics & Performance              📊 Real-time Monitor │
