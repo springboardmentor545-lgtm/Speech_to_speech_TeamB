@@ -1,2 +1,13 @@
-azure-cognitiveservices-speech==1.35.0
-python-dotenv==1.0.0
+streamlit
+azure-cognitiveservices-speech
+streamlit-webrtc
+av
+numpy
+pandas
+moviepy
+noisereduce
+soundfile
+opencv-python-headless
+requests
+python-dotenv
+yt-dlp

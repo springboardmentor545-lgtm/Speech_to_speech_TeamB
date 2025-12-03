@@ -1,0 +1,42 @@
+# Core app
+streamlit>=1.25,<2.0
+python-dotenv>=1.0.0
+
+# Azure Speech SDK (TTS / STT)
+azure-cognitiveservices-speech>=1.19.0
+
+# Media processing
+moviepy==1.0.3
+imageio==2.9.0
+imageio-ffmpeg==0.4.8
+ffmpeg-python>=0.2.0
+pydub>=0.25.1
+
+# Downloaders / helpers
+yt-dlp>=2024.6.0
+gdown>=4.7.1
+setuptools>=65.0.0
+
+# Audio libs
+numpy>=1.24.0
+librosa>=0.10.0
+soundfile>=0.12.1
+noisereduce>=2.0.2
+# pyaudio can be problematic to build on Windows; keep as optional marker
+pyaudio; sys_platform == "win32"
+
+# CV / ML
+opencv-python>=4.7.0
+scikit-learn>=1.2.2
+
+# Speech / NN frameworks
+speechbrain>=0.5.12
+# IMPORTANT: Install torch/torchvision according to your CUDA or CPU build.
+# It's recommended to install torch using the official instructions:
+#   https://pytorch.org/get-started/locally/
+torch
+torchvision
+streamlit-webrtc
+
+# Testing
+pytest>=7.2.0

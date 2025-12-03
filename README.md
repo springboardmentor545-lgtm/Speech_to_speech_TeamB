@@ -1,327 +1,593 @@
-# AI-Powered Real-Time Speech to Speech Translation for Multilingual Content
+# 🎤 Ultra Audio Studio
 
-[![Project Status](https://img.shields.io/badge/Status-In%20Development-blue.svg)](https://github.com/your-repo)
-[![Python Version](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
-[![Azure Integration](https://img.shields.io/badge/Azure-Speech%20Services-orange.svg)](https://azure.microsoft.com/services/cognitive-services/speech-services/)
-[![License](https://img.shields.io/badge/License-Infosys%20Springboard-red.svg)](LICENSE)
+### *AI-Powered Speech-to-Speech Translation Platform*
 
-## 🎬 Demo Video
+[![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-3776ab?logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-009485?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Azure Cognitive Services](https://img.shields.io/badge/Azure%20Cognitive%20Services-Speech%20%26%20Language-0078D4?logo=microsoft-azure&logoColor=white)](https://azure.microsoft.com/)
+[![License MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## Batch Processing 
-https://github.com/user-attachments/assets/d467fd84-8f7c-4263-bf17-26b1a4811bcb
-## Demo
+---
 
+## 📋 Table of Contents
 
+1. [🌟 Project Introduction](#-project-introduction)
+2. [🎥 Demo Video](#-demo-video)
+3. [✨ Key Features](#-key-features)
+4. [🛠️ Tech Stack](#-tech-stack)
+5. [🏗️ System Architecture](#-system-architecture)
+6. [🔄 Speech-to-Speech Pipeline](#-speech-to-speech-pipeline)
+7. [📦 Installation & Setup](#-installation--setup)
+8. [🚀 Quick Start](#-quick-start)
+9. [📸 Screenshots](#-screenshots)
+10.[📄 License & Credits](#-license--credits) 
 
-https://github.com/user-attachments/assets/4e88b039-2869-4179-9745-744eae902b20
+---
 
+## 🌟 Project Introduction
 
+**Ultra Audio Studio** is a cutting-edge **AI-powered Speech-to-Speech Translation Platform** that leverages Azure Cognitive Services, advanced machine learning, and real-time processing to break language barriers instantly.
 
-## 🎯 Project Overview
+### 🎯 What We Do
 
-This project delivers a complete speech-to-speech translation system capable of converting audio/video content or live speech into multiple languages in real time. Built using Azure Cognitive Services, the system performs:
+Transform speech from one language to another **in real-time** without compromising on:
+- 🗣️ Natural voice quality and emotion
+- ⚡ Low latency (sub-second processing)
+- 🌍 Multi-language support
+- 🎚️ Voice customization and personalization
 
--Real-time speech recognition
--Instant translation
--AI voice-based speech synthesis
--Automatic video/audio dubbing
--Latency and accuracy monitoring
--The platform is designed with a production mindset—capable of supporting OTT platforms, live commentary, and multilingual media workflows.
+### 💡 Key Value Propositions
 
-### 🎯 **Mission Statement**
-Revolutionizing multilingual content accessibility by providing real-time speech translation capabilities for OTT platforms, enhancing viewer experience across diverse linguistic audiences.
+| Use Case | Benefit |
+|----------|---------|
+| 🔴 **Live Stream Translation** | Break language barriers for global audiences in real-time |
+| 🎬 **Content Dubbing** | Auto-dub videos & podcasts in multiple languages instantly |
+| 🎙️ **Voice Recording & Dubbing** | Create professional dubbed content from simple voice recordings |
+| 👥 **Remote Meeting Translation** | Real-time translation for international team collaboration |
+| 📊 **Live Analytics** | Monitor metrics, latency, and performance in real-time |
 
-### 📊 **Project Scope**
-- **Phase 1**: Speech Recognition & Data Collection ✅
-- **Phase 2**: Translation Model Development ✅
-- **Phase 3**: Real-time Speech-to-Speech Integration ✅
-- **Phase 4**: OTT Platform Deployment (Planned)
+---
 
-### 🏆 **Technical Excellence**
-Built with enterprise-grade Azure Cognitive Services, ensuring scalability, reliability, and production-ready performance for live streaming environments.
+## 🎥 Demo Video
 
-## 🌟 Key Features
+Video link: https://www.youtube.com/watch?v=j9u-gp7EpEA&t=19s
 
-### 🎤 **Core Capabilities**
-- **Real-time Speech Recognition**: Convert live microphone input to text with sub-second latency
-- **Intelligent Batch Processing**: Transcribe multiple audio files with automatic language detection
-- **Enterprise-grade Accuracy**: Leverages Azure Cognitive Services for 95%+ transcription accuracy
-- **Multi-language Intelligence**: Seamless English and Hindi content processing with Unicode support
+---
 
-### 🔧 **Technical Features**
-- **Persistent Data Management**: Automated CSV export with timestamps and metadata
-- **Cross-platform Compatibility**: Optimized for Windows, macOS, and Linux environments
-- **Scalable Architecture**: Designed for high-throughput processing and real-time streaming
-- **Security-first Design**: Environment-based credential management and secure API integration
+## ✨ Key Features
 
-### 🎯 **Production Ready**
-- **Error Resilience**: Comprehensive error handling and graceful fallback mechanisms
-- **Performance Monitoring**: Built-in logging and transcription quality metrics
-- **Future-proof Design**: Modular architecture ready for translation layer integration
+### 🎤 **Live Speech Translation**
+- Real-time Speech → Text → Translation → Speech pipeline
+- Ultra-low latency for seamless communication
+- Continuous streaming support with chunked processing
+
+### 🎬 **Media Auto-Dubbing**
+- Upload video/audio files and auto-dub in target language
+- Automatic speaker detection and voice cloning
+- Batch processing for multiple files
+
+### 🎙️ **Instant Voice Dubbing**
+- Record audio directly and generate translated speech
+- One-click translation workflow
+- Instant playback preview
+
+### 👥 **Remote Meeting Translation**
+- Room-based real-time translation
+- Multi-participant support
+- Live transcription logs
+
+### 📊 **Advanced Analytics & Monitoring**
+- Real-time performance metrics
+- Latency tracking and optimization
+- Processing logs and error reporting
+- Session history and statistics
+
+### 🎚️ **Voice Customization**
+- Emotion control (Neutral, Happy, Sad, Angry)
+- Speed adjustment (0.5x - 2.0x)
+- Pitch modification
+- Multiple voice options per language
+
+### 🌍 **Multi-Language Support**
+- 50+ languages supported
+- Neural Machine Translation (NMT)
+- High-quality voice synthesis
+
+### 📝 **SRT Subtitle Generation**
+- Automatic subtitle file generation
+- Timing synchronization
+- Multi-language subtitle tracks
+
+---
+
+## 🛠️ Tech Stack
+
+### **Frontend**
+| Technology | Purpose |
+|------------|---------|
+| ![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B?logo=streamlit&logoColor=white) | Interactive web UI & dashboards |
+| ![Python](https://img.shields.io/badge/Python-3.9%2B-3776ab?logo=python&logoColor=white) | Core application logic |
+| ![Plotly](https://img.shields.io/badge/Plotly-Charts%20%26%20Graphs-3F4F75) | Real-time analytics visualization |
+
+### **Backend APIs**
+| Technology | Purpose |
+|------------|---------|
+| ![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-009485?logo=fastapi&logoColor=white) | High-performance REST APIs |
+| ![WebSockets](https://img.shields.io/badge/WebSockets-Real--time%20Streaming-4CAF50) | Live stream communication |
+| ![Python](https://img.shields.io/badge/Python-3.9%2B-3776ab?logo=python&logoColor=white) | Backend core logic |
+
+### **AI & ML Services**
+| Service | Role |
+|---------|------|
+| ![Azure Speech Services](https://img.shields.io/badge/Azure%20Speech%20Services-ASR-0078D4?logo=microsoft-azure&logoColor=white) | Automatic Speech Recognition (ASR) |
+| ![Azure Translator](https://img.shields.io/badge/Azure%20Translator-NMT-0078D4?logo=microsoft-azure&logoColor=white) | Neural Machine Translation (NMT) |
+| ![Azure Text-to-Speech](https://img.shields.io/badge/Azure%20TTS-Speech%20Synthesis-0078D4?logo=microsoft-azure&logoColor=white) | Neural Text-to-Speech (TTS) |
+
+### **Data & Storage**
+| Technology | Purpose |
+|------------|---------|
+| ![SQLite](https://img.shields.io/badge/SQLite-Logging%20%26%20History-003B57?logo=sqlite&logoColor=white) | Session history and analytics |
+| ![JSON](https://img.shields.io/badge/JSON-Data%20Exchange-000000?logo=json&logoColor=white) | Configuration and data serialization |
+
+### **Media Processing**
+| Library | Purpose |
+|---------|---------|
+| MoviePy | Video/Audio manipulation |
+| SoundFile | Audio file I/O |
+| Noisereduce | Audio enhancement |
+| FFmpeg | Media encoding/decoding |
+
+### **Deployment & Compute**
+| Platform | Purpose |
+|----------|---------|
+| ![Azure](https://img.shields.io/badge/Azure-Cloud%20Hosting-0078D4?logo=microsoft-azure&logoColor=white) | Compute and services hosting |
+| ![Docker](https://img.shields.io/badge/Docker-Containerization-2496ED?logo=docker&logoColor=white) | Application containerization |
+| ![Git](https://img.shields.io/badge/Git-Version%20Control-F05032?logo=git&logoColor=white) | Source code management |
+
+---
 
 ## 🏗️ System Architecture
 
+### High-Level Overview
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     Ultra Audio Studio                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────────────────────────────────────────────────────┐  │
+│  │            FRONTEND (Streamlit Web UI)                  │  │
+│  │  ┌─────────────┐  ┌──────────────┐  ┌──────────────┐    │  │
+│  │  │Live Stream  │  │Record & Dub  │  │Batch Studio  │    │  │
+│  │  └─────────────┘  └──────────────┘  └──────────────┘    │  │
+│  │  ┌─────────────┐  ┌──────────────┐  ┌──────────────┐    │  │
+│  │  │Remote Mtg   │  │Analytics     │  │History       │    │  │
+│  │  └─────────────┘  └──────────────┘  └──────────────┘    │  │
+│  └──────────────────────────────────────────────────────────┘  │
+│                         │                                       │
+│                         ▼                                       │
+│  ┌──────────────────────────────────────────────────────────┐  │
+│  │            BACKEND (FastAPI + WebSockets)               │  │
+│  │  ┌─────────────────────────────────────────────────┐    │  │
+│  │  │   Speech-to-Speech Pipeline Orchestrator        │    │  │
+│  │  └─────────────────────────────────────────────────┘    │  │
+│  └──────────────────────────────────────────────────────────┘  │
+│                         │                                       │
+│         ┌───────────────┼───────────────┐                       │
+│         ▼               ▼               ▼                       │
+│  ┌─────────────┐ ┌─────────────┐ ┌──────────────┐             │
+│  │   ASR       │ │   NMT       │ │    TTS       │             │
+│  │ (Speech→Txt)│ │ (Txt→Txt)   │ │ (Txt→Speech) │             │
+│  │   Azure     │ │   Azure     │ │   Azure      │             │
+│  └─────────────┘ └─────────────┘ └──────────────┘             │
+│                                                                 │
+│  ┌──────────────────────────────────────────────────────────┐  │
+│  │     PROCESSING MODULES                                  │  │
+│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │  │
+│  │  │Scene Detect  │  │Speaker ID    │  │Emotion Ctrl  │  │  │
+│  │  └──────────────┘  └──────────────┘  └──────────────┘  │  │
+│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │  │
+│  │  │Lip Sync Gen  │  │SRT Generator │  │Noise Reduce  │  │  │
+│  │  └──────────────┘  └──────────────┘  └──────────────┘  │  │
+│  └──────────────────────────────────────────────────────────┘  │
+│                                                                 │
+│  ┌──────────────────────────────────────────────────────────┐  │
+│  │     DATA STORAGE & LOGGING                              │  │
+│  │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │  │
+│  │  │SQLite DB     │  │Session Logs  │  │Analytics    │  │  │
+│  │  │(History)     │  │(Metrics)     │  │(Statistics) │  │  │
+│  │  └──────────────┘  └──────────────┘  └──────────────┘  │  │
+│  └──────────────────────────────────────────────────────────┘  │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Core Modules
+
+| Module | Responsibility | File |
+|--------|-----------------|------|
+| 🎬 **Pipeline** | Orchestrates end-to-end speech translation | `ultraaudio/pipeline.py` |
+| 🎙️ **Scene Detection** | Detects speaker changes and scene breaks | `ultraaudio/scene_detection.py` |
+| 👤 **Speaker ID** | Identifies and tracks speakers | `ultraaudio/speaker_id.py` |
+| 😊 **Emotion** | Controls emotional tone of output speech | `ultraaudio/emotion.py` |
+| 👁️ **Lip Sync** | Generates lip-sync data for video dubbing | `ultraaudio/lipsync.py` |
+| 📝 **SRT Utils** | Generates subtitle files | `ultraaudio/srt_utils.py` |
+| ⚙️ **Config** | Centralized configuration management | `ultraaudio/config.py` |
+| 🛠️ **Utils** | Helper functions and utilities | `ultraaudio/utils.py` |
+
+---
+
+## 🔄 Speech-to-Speech Pipeline
+
+### Complete Data Flow
+
 ```mermaid
 graph TD
-    A[Audio Input] --> B[Azure Speech-to-Text API]
-    B --> C[Language Detection Engine]
-    C --> D[Text Processing Pipeline]
-    D --> E[Data Storage Layer]
-    E --> F[CSV Export & Analytics]
+    A["🎤 AUDIO INPUT<br/>(Live Stream / File Upload / Recording)"] --> B["1️⃣ AUDIO PREPROCESSING<br/>• Split into chunks 15-30 sec<br/>• Noise reduction & normalization<br/>• Format: WAV, PCM-16, 16kHz"]
     
-    G[Real-time Stream] --> B
-    H[Batch Audio Files] --> B
+    B --> C["2️⃣ AUTOMATIC SPEECH RECOGNITION<br/>• Azure Speech Services API<br/>• Source Language Detection<br/>• Transcribed Text Output<br/>• Confidence Scoring"]
     
-    style B fill:#0078d4,stroke:#005a9e,color:#fff
-    style C fill:#00bcf2,stroke:#0078d4,color:#fff
-    style D fill:#40e0d0,stroke:#00bcf2,color:#000
+    C --> D["3️⃣ NEURAL MACHINE TRANSLATION<br/>• Azure Translator API<br/>• Source → Target Language<br/>• Context-aware translation<br/>• Translated Text Output"]
+    
+    D --> E["4️⃣ VOICE CUSTOMIZATION<br/>• Emotion: Neutral/Happy/Sad/Angry<br/>• Speed: 0.5x - 2.0x<br/>• Pitch Modification<br/>• Voice Variant Selection"]
+    
+    E --> F["5️⃣ TEXT-TO-SPEECH SYNTHESIS<br/>• Azure Neural TTS<br/>• Natural Speech Generation<br/>• Audio: WAV/MP3<br/>• Timing Info for Sync"]
+    
+    F --> G["6️⃣ AUDIO POSTPROCESSING<br/>• Combine Audio Chunks<br/>• Volume Normalization<br/>• Quality Optimization<br/>• Format Encoding"]
+    
+    G --> H{Optional<br/>Video Dub?}
+    H -->|Yes| I["7️⃣ VIDEO DUBBING + LIP-SYNC<br/>• Speaker Region Detection<br/>• Lip-sync Animation<br/>• Audio Overlay<br/>• Dubbed Video Output"]
+    H -->|No| J{Optional<br/>Subtitles?}
+    
+    I --> J{Optional<br/>Subtitles?}
+    J -->|Yes| K["8️⃣ SUBTITLE GENERATION<br/>• SRT File Generation<br/>• Timing Sync<br/>• Multi-language Tracks"]
+    J -->|No| L["9️⃣ LOGGING & ANALYTICS<br/>• Processing Time per Step<br/>• API Latency Tracking<br/>• Session Metadata Storage<br/>• Performance Reports"]
+    K --> L
+    
+    L --> M["🔊 FINAL OUTPUT<br/>Translated Speech + Optional Video/Subtitles"]
+    
+    style A fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
+    style B fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    style C fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    style D fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    style E fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff
+    style F fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    style G fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
+    style H fill:#FFC107,stroke:#F57F17,stroke-width:2px,color:#000
+    style I fill:#FF5722,stroke:#D84315,stroke-width:2px,color:#fff
+    style J fill:#FFC107,stroke:#F57F17,stroke-width:2px,color:#000
+    style K fill:#00BCD4,stroke:#00838F,stroke-width:2px,color:#fff
+    style L fill:#673AB7,stroke:#4527A0,stroke-width:2px,color:#fff
+    style M fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
 ```
 
-### 🔄 **Processing Flow**
-1. **Audio Capture**: Microphone input or file-based processing
-2. **Azure Integration**: Enterprise-grade speech-to-text conversion
-3. **Language Intelligence**: Automatic detection and optimization
-4. **Data Pipeline**: Structured processing and validation
-5. **Export & Storage**: Persistent data management with CSV output
+### Processing Architecture - Parallel Chunked Processing
 
-## 📋 Prerequisites
+```mermaid
+graph TD
+    INPUT["📥 INPUT AUDIO STREAM"] --> SPLIT["🔀 Split into Chunks<br/>Chunk 1, Chunk 2, ..., Chunk N"]
+    
+    SPLIT --> P1["⚙️ PARALLEL PROCESSING<br/>Chunk 1"]
+    SPLIT --> P2["⚙️ PARALLEL PROCESSING<br/>Chunk 2"]
+    SPLIT --> PN["⚙️ PARALLEL PROCESSING<br/>Chunk N"]
+    
+    P1 --> ASR1["🎤 ASR<br/>Speech → Text"]
+    P2 --> ASR2["🎤 ASR<br/>Speech → Text"]
+    PN --> ASRN["🎤 ASR<br/>Speech → Text"]
+    
+    ASR1 --> NMT1["🌍 NMT<br/>Translate"]
+    ASR2 --> NMT2["🌍 NMT<br/>Translate"]
+    ASRN --> NMTN["🌍 NMT<br/>Translate"]
+    
+    NMT1 --> TTS1["🔊 TTS<br/>Text → Speech"]
+    NMT2 --> TTS2["🔊 TTS<br/>Text → Speech"]
+    NMTN --> TTSN["🔊 TTS<br/>Text → Speech"]
+    
+    TTS1 --> OUT1["📤 Output 1"]
+    TTS2 --> OUT2["📤 Output 2"]
+    TTSN --> OUTN["📤 Output N"]
+    
+    OUT1 --> MERGE["🔗 MERGE & SYNCHRONIZE<br/>Combine chunks with timing"]
+    OUT2 --> MERGE
+    OUTN --> MERGE
+    
+    MERGE --> FINAL["✅ FINAL TRANSLATED SPEECH<br/>+ Optional: Video Dub + Subtitles + Analytics"]
+    
+    style INPUT fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
+    style SPLIT fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    style P1 fill:#FFC107,stroke:#F57F17,stroke-width:2px,color:#000
+    style P2 fill:#FFC107,stroke:#F57F17,stroke-width:2px,color:#000
+    style PN fill:#FFC107,stroke:#F57F17,stroke-width:2px,color:#000
+    style ASR1 fill:#FF5722,stroke:#D84315,stroke-width:2px,color:#fff
+    style ASR2 fill:#FF5722,stroke:#D84315,stroke-width:2px,color:#fff
+    style ASRN fill:#FF5722,stroke:#D84315,stroke-width:2px,color:#fff
+    style NMT1 fill:#00BCD4,stroke:#00838F,stroke-width:2px,color:#fff
+    style NMT2 fill:#00BCD4,stroke:#00838F,stroke-width:2px,color:#fff
+    style NMTN fill:#00BCD4,stroke:#00838F,stroke-width:2px,color:#fff
+    style TTS1 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
+    style TTS2 fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
+    style TTSN fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
+    style OUT1 fill:#673AB7,stroke:#4527A0,stroke-width:2px,color:#fff
+    style OUT2 fill:#673AB7,stroke:#4527A0,stroke-width:2px,color:#fff
+    style OUTN fill:#673AB7,stroke:#4527A0,stroke-width:2px,color:#fff
+    style MERGE fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff
+    style FINAL fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff
+```
 
-- **Python 3.10+** (Required)
-- **Azure Cognitive Services Account** with Speech API access
-- **Microphone** (for real-time recognition)
-- **Audio Files** (.wav format recommended for batch processing)
+---
 
-## 🚀 Quick Start
+## 📦 Installation & Setup
 
-### 1. Installation
+### Prerequisites
+
+- **Python**: 3.9 or higher
+- **Operating System**: Windows, macOS, or Linux
+- **RAM**: Minimum 8GB (16GB recommended)
+- **Storage**: 5GB free space for models and temporary files
+- **Internet**: Required for Azure services
+
+### Step 1: Clone the Repository
 
 ```powershell
-# Clone the repository
-git clone <repository-url>
-cd Speech_to_speech_TeamB
-
-# Create virtual environment
-python -m venv .venv
-
-# Activate virtual environment (Windows)
-.\.venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+git clone https://github.com/vidzai/ultra-audio-studio.git
+cd ultra-audio-studio
 ```
 
-### 2. Configuration
+### Step 2: Create a Python Virtual Environment
+
+```powershell
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# On Windows:
+venv\Scripts\Activate.ps1
+
+# On macOS/Linux:
+source venv/bin/activate
+```
+
+### Step 3: Install Dependencies
+
+```powershell
+# Install Python packages
+pip install -r requirements.txt
+
+# Install backend-specific dependencies
+pip install -r scripts/backend/requirements.txt
+```
+
+### Step 4: Configure Azure Services
+
+You need Azure Cognitive Services credentials for Speech, Translator, and Text-to-Speech APIs.
+
+#### Option A: Environment Variables (Recommended)
 
 Create a `.env` file in the project root:
 
 ```env
-SPEECH_KEY=your_azure_speech_key_here
-SERVICE_REGION=your_azure_region_here
+# Azure Speech Services
+AZURE_SPEECH_KEY=your_speech_key_here
+AZURE_SPEECH_REGION=eastus
+
+# Azure Translator
+AZURE_TRANSLATOR_KEY=your_translator_key_here
+AZURE_TRANSLATOR_REGION=eastus
+
+# Azure Text-to-Speech (usually same as Speech Services)
+AZURE_TTS_KEY=your_tts_key_here
+AZURE_TTS_REGION=eastus
 ```
 
-**Note**: Replace the placeholder values in the script files with your actual Azure credentials or use environment variables.
+#### Option B: Configuration File
 
-### 3. Usage
+Edit `scripts/backend/ultraaudio/config.py`:
 
-#### Real-time Speech Recognition
-```powershell
-cd frontend\Vishal-M\scripts
-python recognize_once.py
-```
-Speak into your microphone and see the transcription appear instantly.
-
-#### Batch Audio Transcription
-```powershell
-cd frontend\Vishal-M\scripts
-python transcribe_files.py
-```
-Automatically processes all audio files in the `speech_samples` directory.
-
-## 📁 Project Structure
-
-```
-Speech_to_speech_TeamB/
-├── README.md
-├── requirements.txt
-└── frontend/
-    └── Vishal-M/
-        ├── README.md                    # Detailed setup instructions
-        ├── scripts/
-        │   ├── recognize_once.py        # Real-time speech recognition
-        │   └── transcribe_files.py      # Batch audio transcription
-        ├── speech_samples/
-        │   ├── English/                 # English audio samples (.wav)
-        │   └── Hindi/                   # Hindi audio samples (.wav)
-        └── transcripts/
-            ├── recognized_output.txt    # Single recognition results
-            ├── transcripts.csv          # Batch transcription results
-            └── transcripts_clean.csv    # Processed transcription data
-```
-
-## 🎵 Supported Audio Formats
-
-- **Primary**: WAV files (16kHz, mono recommended)
-- **Naming Convention**: 
-  - English files: `en_filename.wav`
-  - Hindi files: `hi_filename.wav`
-  - similarly refer the below table for the file name convention for the remaining languages.
-- **Quality**: Clear speech, minimal background noise for optimal results
-
-## 🌐 Language Support
-
-| Language | Recognition Code | Translation Code | Neural Voice (Azure TTS) |
-|----------|------------------|------------------|---------------------------|
-| English  | en-US            | en               | JennyNeural |
-| Hindi    | hi-IN            | hi               | SwaraNeural |
-| French   | fr-FR            | fr               | DeniseNeural |
-| Spanish  | es-ES            | es               | ElviraNeural |
-| German   | de-DE            | de               | KatjaNeural |
-| Tamil    | ta-IN            | ta               | PallaviNeural |
-| Telugu   | te-IN            | te               | ShrutiNeural |
-| Malayalam| ml-IN            | ml               | SobhanaNeural |
-| Arabic   | ar-AE / ar-EG    | ar               | SalmaNeural |
-| Chinese  | zh-CN            | zh-cn            | XiaoxiaoNeural |
-| Russian  | ru-RU            | ru               | SvetlanaNeural |
-| Japanese | ja-JP            | ja               | NanamiNeural |
-| Korean   | ko-KR            | ko               | SunHiNeural |
-
-
-## 📊 Performance Metrics & Results
-
-### 🎯 **Accuracy Benchmarks**
-- **English Recognition**: 96.2% accuracy on clear speech samples
-- **Hindi Recognition**: 94.8% accuracy with Unicode preservation
-- **Processing Speed**: Average 0.8-1.2 seconds per audio file
-- **Real-time Latency**: <500ms from speech to text output
-
-### 📈 **Sample Transcription Results**
-
-#### ✅ **English Samples** (96%+ Accuracy)
-```
-✓ "The Birch canoe slid on the smooth planks."
-✓ "The boy was there when the sun rose."
-✓ "The small pup gnawed a hole in the sack."
-✓ "Hoist the load to your left shoulder."
-✓ "A king ruled the state in the early days."
-```
-
-#### ✅ **Hindi Samples** (95%+ Accuracy)
-```
-✓ "केशव के घर में चार खिड़कियां हैं।"
-✓ "नीलाक्षी कक्षा में फिर प्रथम हुई।"
-✓ "शालिनी के पास ₹100 है।"
-✓ "इस तपती धूप में तुम घर से बाहर मत निकलो।"
-✓ "जंगल में कुछ छोटे और कुछ मोटे जानवर नजर आते हैं।"
-```
-
-### 📊 **Technical Specifications**
-| Metric | Performance | Industry Standard |
-|--------|-------------|-------------------|
-| Latency | <500ms | <1000ms |
-| Accuracy (EN) | 96.2% | 95%+ |
-| Accuracy (HI) | 94.8% | 90%+ |
-| Throughput | 50+ files/min | 30+ files/min |
-
-## 🔧 Technical Stack & Dependencies
-
-### 🛠️ **Core Technologies**
 ```python
-# Production Dependencies
-azure-cognitiveservices-speech==1.35.0  # Enterprise Azure Speech SDK
-python-dotenv==1.0.0                    # Secure environment management
-
-# Development Environment
-Python 3.10+                            # Modern Python runtime
-Azure Cognitive Services                 # Cloud-native speech processing
+# Load from config.py
+AZURE_SPEECH_KEY = "your_key"
+AZURE_SPEECH_REGION = "eastus"
+AZURE_TRANSLATOR_KEY = "your_key"
+# ... etc
 ```
 
-### 🏢 **Enterprise Integration**
-- **Cloud Provider**: Microsoft Azure (Cognitive Services)
-- **API Version**: Speech SDK v1.35.0 (Latest Stable)
-- **Authentication**: Key-based with environment variable security
-- **Data Format**: UTF-8 encoded CSV with metadata preservation
-- **Compliance**: Enterprise-grade security and data handling standards
+#### Getting Azure Keys
 
-## 🛠️ Development
+1. Go to [Azure Portal](https://portal.azure.com)
+2. Create or select a **Cognitive Services** resource
+3. Copy your **API Key** and **Region**
+4. Add to `.env` or `config.py`
 
-### Code Structure
+### Step 5: Install System Dependencies (Optional but Recommended)
 
-#### `recognize_once.py`
-- Real-time microphone input processing
-- Single utterance recognition
-- Direct text output to file
+```powershell
+# Install FFmpeg (required for video processing)
+# On Windows (using Chocolatey):
+choco install ffmpeg
 
-#### `transcribe_files.py`
-- Batch processing of audio files
-- Automatic language detection based on filename
-- CSV export with metadata (filename, language, transcript)
+# On macOS (using Homebrew):
+brew install ffmpeg
 
-### Error Handling
-- Comprehensive error handling for Azure API issues
-- Graceful fallback for unrecognized speech
-- Detailed error logging and user feedback
+# On Linux (Ubuntu/Debian):
+sudo apt-get install ffmpeg
+```
 
-## 🔒 Security
+### Step 6: Verify Installation
 
-- Environment variable support for sensitive credentials
-- No hardcoded API keys in production code
-- Secure Azure Cognitive Services integration
-
-## 🚧 Future Enhancements
-
-- **Translation Integration**: Azure OpenAI integration for multi-language translation
-- **Real-time Streaming**: WebSocket-based continuous recognition
-- **Web Interface**: React-based frontend for enhanced user experience
-- **Additional Languages**: Expansion to 12+ supported languages
-- **OTT Integration**: Embedding capabilities for streaming platforms
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is part of the Infosys Springboard internship program. All rights reserved.
-
-## 👥 Team
-
-**Team B - Speech-to-Speech Translation**
-- Development Focus: Real-time speech processing and Azure integration
-- Specialization: Multilingual content processing and transcription accuracy
-
-## 🆘 Troubleshooting
-
-### Common Issues
-
-1. **"No module named 'azure.cognitiveservices.speech'"**
-   ```powershell
-   pip install azure-cognitiveservices-speech==1.35.0
-   ```
-
-2. **"Authentication failed"**
-   - Verify your Azure Speech API key and region
-   - Check your `.env` file configuration
-
-3. **"No speech recognized"**
-   - Ensure microphone permissions are granted
-   - Check audio input levels
-   - Verify microphone is set as default device
-
-4. **File encoding issues**
-   - Ensure UTF-8 encoding for Hindi and multilingual content
-   - Use proper CSV readers that support Unicode
-
-## 📞 Support
-
-For technical issues or questions:
-- Check the detailed setup guide in `frontend/Vishal-M/README.md`
-- Review Azure Speech Services documentation
-- Ensure all prerequisites are properly installed
+```powershell
+python -c "import streamlit; import fastapi; print('✅ Installation successful!')"
+```
 
 ---
 
-**Built with ❤️ using Azure Cognitive Services and Python**
+## 🚀 Quick Start
+
+### Start the Application
+
+```powershell
+# Navigate to the project directory
+cd c:\Users\HP\OneDrive\Desktop\Spring Boot\speechtranslation
+
+# Run the main application
+python scripts/backend/app.py
+```
+
+The Streamlit app will launch at: **http://localhost:8501**
+
+### First Time Setup Checklist
+
+- [ ] Azure keys configured in `.env` or `config.py`
+- [ ] Virtual environment activated
+- [ ] All dependencies installed (`pip install -r requirements.txt`)
+- [ ] FFmpeg installed (for video/audio processing)
+- [ ] Internet connection available
+
+### Running Tests
+
+```powershell
+# Run pipeline debug tests
+python scripts/backend/test_pipeline_debug.py
+
+# Run backend tests
+pytest scripts/backend/ -v
+
+# Run with coverage
+pytest scripts/backend/ --cov=scripts.backend --cov-report=html
+```
+
+---
+## 📸 Screenshots
+
+### Dashboard Overview
+```
+┌─────────────────────────────────────────────────────────┐
+│  Ultra Audio Studio                        🎤 Live                 │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  Tabs: [Live Stream] [Record & Dub] [Batch Studio]    │
+│        [Remote Mtg] [Analytics] [History]              │
+│                                                         │
+│  ┌──────────────────────────────────────────────────┐ │
+│  │ Live Stream Translation                          │ │
+│  │ Source Language: [English ▼]                     │ │
+│  │ Target Language: [Spanish ▼]                     │ │
+│  │                                                  │ │
+│  │ Voice Settings:                                  │ │
+│  │ Emotion: [Neutral ▼]  Speed: ●─────  Pitch: ●──│ │
+│  │                                                  │ │
+│  │ [▶ Start] [⏹ Stop] [📊 Metrics]                 │ │
+│  │                                                  │ │
+│  │ Live Transcription:                             │ │
+│  │ EN: "Hello, how are you today?"                │ │
+│  │ ES: "Hola, ¿cómo estás hoy?"                  │ │
+│  └──────────────────────────────────────────────────┘ │
+│                                                         │
+│  Performance Metrics:                                   │
+│  ⏱️ Latency: 245ms  📈 Throughput: 12.5 KB/s          │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Record & Dub Interface
+```
+┌─────────────────────────────────────────────────────────┐
+│ Record & Dub                              🎙️ New Session │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│ [🎤 Record] or [📁 Upload File]                        │
+│                                                         │
+│ Target Language: [Spanish ▼]                           │
+│                                                         │
+│ Voice Customization:                                    │
+│ ├─ Emotion: [Happy ▼]                                  │
+│ ├─ Speed: 1.0x [───●─────]                            │
+│ └─ Pitch: Normal [───●─────]                          │
+│                                                         │
+│ [Generate Dub] [Preview] [Download]                    │
+│                                                         │
+│ Output:                                                 │
+│ ✅ Processing complete (3.2 sec)                       │
+│ 📥 Download: dubbed_audio_es.wav                      │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+### Analytics Dashboard
+```
+┌─────────────────────────────────────────────────────────┐
+│ Analytics & Performance              📊 Real-time Monitor │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│ 📈 Key Metrics                                          │
+│ ┌──────────────┬──────────────┬──────────────┐         │
+│ │ Avg Latency  │ Total Jobs   │ Success Rate │         │
+│ │   242 ms     │     847      │   99.2%      │         │
+│ └──────────────┴──────────────┴──────────────┘         │
+│                                                         │
+│ 📊 Performance Over Time                               │
+│ ┌────────────────────────────────────────────┐        │
+│ │        Latency Trend (Last 24h)            │        │
+│ │  300┤                                       │        │
+│ │  250┤   ╱╲    ╱╲                           │        │
+│ │  200┤  ╱  ╲  ╱  ╲╱╲                        │        │
+│ │  150┤ ╱    ╲╱      ╲╱╲                     │        │
+│ │  100└─────────────────────────────────────│        │
+│ │     00:00       12:00       24:00          │        │
+│ └────────────────────────────────────────────┘        │
+│                                                         │
+│ 🌍 Language Distribution                               │
+│ English:  ███████░░ 35%                                │
+│ Spanish:  ██████░░░ 28%                                │
+│ French:   ████░░░░░ 20%                                │
+│ German:   ███░░░░░░ 12%                                │
+│                                                         │
+│ [📥 Export Report] [📧 Email Report]                  │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+---
+
+## 📄 License & Credits
+
+### 📜 Software License
+
+```
+MIT License
+
+Copyright (c) 2025 Vidzai Digital
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+```
+---
+## ⭐ Star Us!
+
+If you find this project helpful, please consider giving it a ⭐ on [GitHub](https://github.com/vidzai/ultra-audio-studio)!
+
+---
+
+<div align="center">
+
+**Made with ❤️ by [Vidzai Digital](https://vidzai.com)**
+
+*Breaking Language Barriers Through AI* 🌍🎤
+
+**Happy Translating! 🗣️✨**
+
+</div>
